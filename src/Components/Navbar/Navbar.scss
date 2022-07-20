@@ -1,0 +1,122 @@
+@import '../../variables.scss';
+
+.navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 0.5rem 0rem;
+    color: $peach;
+    background-color: $eggshell;
+
+    .brand {
+        text-decoration: none;
+        color: $jelly-bean;
+        font-size: 2rem;
+        font-weight: bold;
+        margin-left: 1rem;
+    }
+
+    .navigation-menu {
+        margin-left: auto;
+
+        ul {
+            li {
+                display: inline;
+                text-align: center;
+                list-style-type: none;
+                
+                .nav-link {
+                    text-decoration: none;
+                    width: 96px;
+                    padding: .4rem .8rem;
+                    color: $peach;
+                    font-weight: 600;
+                    display: inline-block;
+                    transition: all .3s ease-in-out;
+                }
+
+                &.underline > .nav-link {
+                    color: $jelly-bean;
+                }
+
+                &:hover > .nav-link {
+                    color: $jelly-bean;
+                }
+            }
+
+            li.one:hover ~ hr {
+                margin-left: 0;
+            }
+
+            li.two:hover ~ hr, .two.underline ~ hr {
+                margin-left: calc(96px + 1.6rem);
+            }
+            
+            li.three:hover ~ hr, .three.underline ~ hr {
+                margin-left: calc(2 * (96px + 1.6rem));
+            }
+            
+            li.four:hover ~ hr {
+                margin-left: calc(3 * (96px + 1.6rem));
+            }
+
+            hr {
+                height: .25rem;
+                width: calc(96px + 1.6rem);
+                margin: 0;
+                background: $jelly-bean;
+                border: none;
+                transition: .3s ease-in-out;
+            }
+        }
+    }
+
+    .menu-icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navigation {
+        .menu-icon {
+            display: block;
+        }
+    }
+
+    .navigation-menu {
+        ul {
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background-color: $eggshell;
+            border-top: 1px solid $jelly-bean;
+            display: none;
+
+            li {
+                text-align: center;
+                margin: 0;
+
+                .nav-link {
+                    color: $jelly-bean;
+                    width: 100%;
+                    padding: 1.5rem 0;
+                }
+
+                &:hover {
+                    background-color: $vanilla;
+                }
+            }
+        }
+
+        &.expanded {
+            ul {
+                display: block;
+            }
+        }
+    }
+}

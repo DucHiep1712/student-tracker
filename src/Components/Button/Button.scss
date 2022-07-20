@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+/*Nút bấm mặc định*/
+.btn {
+    padding: 8px 20px;
+    border-radius: 24px;
+    background-color: $jelly-bean;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:disabled {
+        background-color: $taupe;
+        cursor: default;
+    }
+}
+
+/*Nút bấm lõi*/
+.btn--primary {
+    background-color: $jelly-bean;
+    color: $eggshell;
+    transition: all 0.3s ease-out;
+
+    &:hover:enabled {
+        background-color: $eggshell;
+        color: $peach;
+    }
+}
+
+/*Nút bấm viền*/
+.btn--outline {
+    background-color: transparent;
+    color: $jelly-bean;
+    padding: 8px 20px;
+    border: 1px solid $jelly-bean;
+    transition: all 0.3s ease-out;
+
+    &:hover:enabled {
+        background-color: $jelly-bean;
+        color: $eggshell;
+    }
+}
+
+/*Kích thước nút bấm*/
+.btn--medium {
+    width: 128px;
+    padding: 8px 18px;
+    font-size: 12px;
+}
+
+.btn--large {
+    width: 198px;
+    padding: 12px 20px;
+    font-size: 15px;
+}
+
+.btn--extra--large {
+    width: 224px;
+    padding: 16px 24px;
+    font-size: 24px;
+}

@@ -1,25 +1,41 @@
 {
-  "name": "begin-app",
-  "description": "Begin Create React App + API",
-  "version": "0.0.0",
-  "proxy": "http://localhost:3333",
+  "name": "student-view",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "^4.0.3"
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/material": "^5.9.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "cogo-toast": "^4.2.3",
+    "hamburger-react": "^2.5.0",
+    "react": "^18.2.0",
+    "react-cookie": "^4.1.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "sass": "^1.53.0",
+    "swiper": "^8.3.0",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "run-p start:react api",
-    "start:react": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:i": "react-scripts test",
-    "eject": "react-scripts eject",
-    "api": "cross-env NODE_ENV=testing ARC_LOCAL=1 npx sandbox",
-    "test": "cross-env NODE_ENV=testing PORT=6666 tape test/**/*-test.js test/*-test.js | tap-spec",
-    "serve": "run-s build api"
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -32,14 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@architect/sandbox": "^5.2.4",
-    "@begin/data": "^4.0.0",
-    "cross-env": "^7.0.3",
-    "npm-run-all": "^4.1.5",
-    "tap-spec": "^5.0.0",
-    "tape": "^5.5.3",
-    "tiny-json-http": "^7.4.2"
   }
 }
